@@ -3,7 +3,7 @@ package dev.georgebarker.publisher;
 import dev.georgebarker.manager.SessionManager;
 import dev.georgebarker.model.Cryptocurrency;
 
-// Possibly make the publisher more generic Publisher<Cryptocurrency> ?
+// TODO Possibly make the publisher more generic Publisher<Cryptocurrency> ?
 public class CryptocurrencyPublisher {
 
     public static final CryptocurrencyPublisher INSTANCE = new CryptocurrencyPublisher();

@@ -13,10 +13,6 @@ import jakarta.websocket.server.ServerEndpoint;
 @ServerEndpoint(value = "/cryptocurrencies", encoders = CryptocurrencyEncoder.class)
 public class CryptocurrenciesEndpoint {
 
-    public CryptocurrenciesEndpoint() {
-        System.out.println("instantiated CryptocurrenciesEndpoint");
-    }
-
     private final SessionManager sessionManager = SessionManager.INSTANCE;
 
     @OnOpen

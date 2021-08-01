@@ -13,6 +13,9 @@ A Java application running on Tomcat that pushes the prices for cryptocurrencies
 - [ ] Introduce dependency injection
 - [ ] Introduce Log4j
 - [ ] Use a Scheduler
+- [ ] Unit tests
+- [ ] Ensure logged objects are not simply logging their HashCode
+- [ ] Decouple the Tomcat service name from the WAR name so that the WAR can be deployed with its version number, but be invoked without it
 
 ## Sample clients
 1. I have built a sample client on iOS, [ios-crypto-websocket-client](https://github.com/georgebarker/ios-crypto-websocket-client).
