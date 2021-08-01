@@ -3,6 +3,7 @@ package dev.georgebarker.publisher;
 import dev.georgebarker.manager.SessionManager;
 import dev.georgebarker.model.Cryptocurrency;
 
+// Possibly make the publisher more generic Publisher<Cryptocurrency> ?
 public class CryptocurrencyPublisher {
 
     private final SessionManager sessionManager = SessionManager.INSTANCE;
