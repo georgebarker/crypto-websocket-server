@@ -6,6 +6,15 @@ import java.util.Set;
 
 public class SessionManager {
 
+    /**
+     * TODO List:
+     * 1. Manage onError message properly. Perhaps introduce a maxAttempts before removing.
+     * 2. Use a Map to store a SessionDetails alongside the session with things like:
+     *     a) sessionOpenedTimestamp
+     *     b) sessionErrorCount
+     *     c) sessionErrors (List<Throwable>s)
+     */
+
     private final Set<Session> sessions = new HashSet<>();
 
     public void add(Session session) {
