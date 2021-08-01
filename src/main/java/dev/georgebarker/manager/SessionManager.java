@@ -6,6 +6,9 @@ import java.util.Set;
 
 public class SessionManager {
 
+    //TODO: Introduce Dependency Injection
+    public static final SessionManager INSTANCE = new SessionManager();
+
     /**
      * TODO List:
      * 1. Manage onError message properly. Perhaps introduce a maxAttempts before removing.
@@ -16,6 +19,10 @@ public class SessionManager {
      */
 
     private final Set<Session> sessions = new HashSet<>();
+
+    public Set<Session> getSessions() {
+        return sessions;
+    }
 
     public void add(Session session) {
         System.out.println("INFO: Added Session: " + session);

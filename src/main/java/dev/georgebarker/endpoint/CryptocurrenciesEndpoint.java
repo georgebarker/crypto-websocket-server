@@ -15,7 +15,7 @@ import javax.websocket.server.ServerEndpoint;
 )
 public class CryptocurrenciesEndpoint {
 
-    private final SessionManager sessionManager = new SessionManager();
+    private final SessionManager sessionManager = SessionManager.INSTANCE;
 
     @OnOpen
     public void onOpen(Session session) {
