@@ -2,4 +2,5 @@ dev/georgebarker/publisher/CryptocurrencyPublisher.class
 dev/georgebarker/manager/SessionManager.class
 dev/georgebarker/model/CryptocurrencyEncoder.class
 dev/georgebarker/endpoint/CryptocurrenciesEndpoint.class
+dev/georgebarker/endpoint/TestEndpoint.class
 dev/georgebarker/model/Cryptocurrency.class
