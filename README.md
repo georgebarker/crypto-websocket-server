@@ -19,4 +19,4 @@ A Java application running on Tomcat that pushes the prices for cryptocurrencies
 
 ## Sample clients
 1. I have built a sample client on iOS, [ios-crypto-websocket-client](https://github.com/georgebarker/ios-crypto-websocket-client).
-2. As mentioned in [How to use](#How to use), [Simple WebSocket Client](https://addons.mozilla.org/en-US/firefox/addon/simple-websocket-client/) browser extension gets you up and running quickly.
+2. As mentioned, [Simple WebSocket Client](https://addons.mozilla.org/en-US/firefox/addon/simple-websocket-client/) browser extension gets you up and running quickly.
