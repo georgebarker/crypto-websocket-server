@@ -17,8 +17,8 @@ public class CryptocurrenciesEndpoint {
 
     @OnOpen
     public void onOpen(Session session) throws IOException {
-        sessions.add(session);
         System.out.println("Opened session: " + session);
+        sessions.add(session);
         // Get session and WebSocket connection
     }
 
