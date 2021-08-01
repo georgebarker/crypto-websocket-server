@@ -17,6 +17,7 @@ A Java application running on Tomcat that pushes the prices for cryptocurrencies
 - [ ] Unit tests
 - [ ] Decouple the Tomcat service name from the WAR name so that the WAR can be deployed with its version number, but be invoked without it
 - [ ] Give the Docker container a nice hostname like `crypto-websocket-server.docker`
+- [ ] Find a nicer way of logging 3rd party objects than calling the LogHelper everytime, perhaps this can be achieved with a pointcut
 
 ## Sample clients
 1. I have built a sample client on iOS, [ios-crypto-websocket-client](https://github.com/georgebarker/ios-crypto-websocket-client).

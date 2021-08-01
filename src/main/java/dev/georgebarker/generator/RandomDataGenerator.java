@@ -39,7 +39,6 @@ public class RandomDataGenerator {
         //  Eventually to be replaced with a real data source, of course.
         final Runnable runnable = () -> {
             while (true) {
-                log.info("bid: {}", bid);
                 bid = bid.multiply(getRandomMultiplier(), MATH_CONTEXT_FOR_TICK_SIZE);
                 ask = ask.multiply(getRandomMultiplier(), MATH_CONTEXT_FOR_TICK_SIZE);
                 last = last.multiply(getRandomMultiplier(), MATH_CONTEXT_FOR_TICK_SIZE);
