@@ -19,6 +19,9 @@ A Java application running on Tomcat that pushes the prices for cryptocurrencies
 - [ ] Give the Docker container a nice hostname like `crypto-websocket-server.docker`
 - [ ] Find a nicer way of logging 3rd party objects than calling the LogHelper everytime, perhaps this can be achieved with a pointcut
 - [ ] Create a diagram that shows how this application works
+- [ ] Swagger API documentation, need to find out how to document a WebSocket API
+- [ ] Parameterise the `buildThenRun.sh` script to allow for running the application on any port specified
+- [ ] Modify the `buildThenRun.sh` script to tidy up stale images
 
 ## Sample clients
 1. I have built a sample client on iOS, [ios-crypto-websocket-client](https://github.com/georgebarker/ios-crypto-websocket-client).
