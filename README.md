@@ -10,10 +10,10 @@ A Java application running on Tomcat that pushes the prices for cryptocurrencies
 ## Things to improve
 - [X] Introduce Log4j
 - [X] Ensure logged objects are not simply logging their HashCode
-- [ ] Make the random data a bit more random
-- [ ] Introduce a tick size field on the Cryptocurrency model
+- [X] Make the random data a bit more random
+- [X] Introduce a tick size field on the Cryptocurrency model
 - [ ] Introduce dependency injection
-- [ ] Use a Scheduler
+- [ ] Use a Scheduler for random data generation
 - [ ] Unit tests
 - [ ] Decouple the Tomcat service name from the WAR name so that the WAR can be deployed with its version number, but be invoked without it
 - [ ] Give the Docker container a nice hostname like `crypto-websocket-server.docker`

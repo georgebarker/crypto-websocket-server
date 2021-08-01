@@ -1,6 +1,7 @@
 package dev.georgebarker.manager;
 
 
+import dev.georgebarker.helper.LogHelper;
 import jakarta.websocket.Session;
 import lombok.extern.slf4j.Slf4j;
 
@@ -30,16 +31,16 @@ public class SessionManager {
 
     public void add(Session session) {
         sessions.add(session);
-        log.info("Added Session {}", session);
+        log.info("Added Session {}", LogHelper.getLoggableSession(session));
     }
 
     public void remove(Session session, Throwable throwable) {
-        log.error("Removing erroneous Session: {}", session, throwable);
+        log.error("Removing erroneous Session: {}", LogHelper.getLoggableSession(session), throwable);
         remove(session);
     }
 
     public void remove(Session session) {
         sessions.remove(session);
-        log.info("Removed Session: {}", session);
+        log.info("Removed Session: {}", LogHelper.getLoggableSession(session));
     }
 }

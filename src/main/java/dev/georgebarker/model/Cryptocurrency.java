@@ -12,4 +12,5 @@ public class Cryptocurrency {
     private BigDecimal last;
     private BigDecimal bid;
     private BigDecimal ask;
+    private int tickSize;
 }
