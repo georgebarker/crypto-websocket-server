@@ -3,7 +3,7 @@ package dev.georgebarker.publisher;
 import dev.georgebarker.manager.SessionManager;
 import dev.georgebarker.model.Cryptocurrency;
 
-public class CryptocurrencyMessagePublisher {
+public class CryptocurrencyPublisher {
 
     private final SessionManager sessionManager = SessionManager.INSTANCE;
 
