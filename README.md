@@ -1,0 +1,19 @@
+# Cryptocurrency WebSocket Server
+A Java application running on Tomcat that pushes the prices for cryptocurrencies to clients listening on a [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket).
+
+## How to use
+1. The script `buildThenRun.sh` will build the Java, create a Docker image and then run a Docker container for you. 
+2. A client will be required; to get up and running quickly you can use a browser extension such as [Simple WebSocket Client](https://addons.mozilla.org/en-US/firefox/addon/simple-websocket-client/).
+3. Using the client, open a connection to the URL `ws://localhost:8081/crypto-websocket-server/cryptocurrencies`. 
+4. Your client will begin to receive prices.
+
+## Things to improve
+- [ ] Make the random data a bit more random
+- [ ] Introduce a tick size field on the Cryptocurrency model
+- [ ] Introduce dependency injection
+- [ ] Introduce Log4j
+- [ ] Use a Scheduler
+
+## Sample clients
+1. I have built a sample client on iOS, [ios-crypto-websocket-client](https://github.com/georgebarker/ios-crypto-websocket-client).
+2. As mentioned in [How to use](#How to use), [Simple WebSocket Client](https://addons.mozilla.org/en-US/firefox/addon/simple-websocket-client/) browser extension gets you up and running quickly.
