@@ -1,5 +1,6 @@
 package dev.georgebarker.endpoint;
 
+import dev.georgebarker.generator.RandomDataGenerator;
 import dev.georgebarker.manager.SessionManager;
 import dev.georgebarker.model.CryptocurrencyEncoder;
 import jakarta.websocket.OnClose;
@@ -20,6 +21,12 @@ public class CryptocurrenciesEndpoint {
 
     @OnOpen
     public void onOpen(Session session) {
+        // Lazy start the generation for until we actually get a connection.
+        // This will be replaced with a dependency injected generator and eventually a real data feed.
+        if (!RandomDataGenerator.INSTANCE.isStarted()) {
+            RandomDataGenerator.INSTANCE.startRandomDataGeneration();
+        }
+
         sessionManager.add(session);
     }
 

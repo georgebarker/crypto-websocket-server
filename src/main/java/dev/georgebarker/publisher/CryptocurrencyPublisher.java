@@ -6,6 +6,7 @@ import dev.georgebarker.model.Cryptocurrency;
 // Possibly make the publisher more generic Publisher<Cryptocurrency> ?
 public class CryptocurrencyPublisher {
 
+    public static final CryptocurrencyPublisher INSTANCE = new CryptocurrencyPublisher();
     private final SessionManager sessionManager = SessionManager.INSTANCE;
 
     public void publish(Cryptocurrency cryptocurrency) {
