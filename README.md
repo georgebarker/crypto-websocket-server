@@ -22,6 +22,7 @@ A Java application running on Tomcat that pushes the prices for cryptocurrencies
 - [ ] Swagger API documentation, need to find out how to document a WebSocket API
 - [ ] Parameterise the `buildThenRun.sh` script to allow for running the application on any port specified
 - [ ] Modify the `buildThenRun.sh` script to tidy up stale images
+- [ ] Provide the WebSocket over wss (WebSocket Secure)
 
 ## Sample clients
 1. I have built a sample client on iOS, [ios-crypto-websocket-client](https://github.com/georgebarker/ios-crypto-websocket-client).
