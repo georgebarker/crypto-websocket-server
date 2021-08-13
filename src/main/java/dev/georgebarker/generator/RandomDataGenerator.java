@@ -47,7 +47,7 @@ public class RandomDataGenerator {
                         .bid(bid)
                         .ask(ask)
                         .last(last)
-                        .tickSize(DEFAULT_TICK_SIZE)
+                        .fiatTickSize(DEFAULT_TICK_SIZE)
                         .build();
 
                 CryptocurrencyPublisher.INSTANCE.publish(cryptocurrency);
