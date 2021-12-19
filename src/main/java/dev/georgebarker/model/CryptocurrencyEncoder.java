@@ -1,7 +1,6 @@
 package dev.georgebarker.model;
 
 import com.google.gson.Gson;
-import jakarta.websocket.EncodeException;
 import jakarta.websocket.Encoder;
 import jakarta.websocket.EndpointConfig;
 

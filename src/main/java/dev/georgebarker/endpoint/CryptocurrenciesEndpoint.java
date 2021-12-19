@@ -2,7 +2,7 @@ package dev.georgebarker.endpoint;
 
 import dev.georgebarker.generator.RandomDataGenerator;
 import dev.georgebarker.manager.SessionManager;
-import dev.georgebarker.model.CryptocurrencyEncoder;
+import dev.georgebarker.model.CryptocurrencyListEncoder;
 import jakarta.websocket.OnClose;
 import jakarta.websocket.OnError;
 import jakarta.websocket.OnOpen;
@@ -10,7 +10,7 @@ import jakarta.websocket.Session;
 import jakarta.websocket.server.ServerEndpoint;
 
 
-@ServerEndpoint(value = "/cryptocurrencies", encoders = CryptocurrencyEncoder.class)
+@ServerEndpoint(value = "/cryptocurrencies", encoders = CryptocurrencyListEncoder.class)
 public class CryptocurrenciesEndpoint {
 
     private final SessionManager sessionManager = SessionManager.INSTANCE;

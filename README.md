@@ -20,9 +20,11 @@ A Java application running on Tomcat that pushes the prices for cryptocurrencies
 - [ ] Find a nicer way of logging 3rd party objects than calling the LogHelper everytime, perhaps this can be achieved with a pointcut
 - [ ] Create a diagram that shows how this application works
 - [ ] Swagger API documentation, need to find out how to document a WebSocket API
+- [ ] Create a `run.sh` script
 - [ ] Parameterise the `buildThenRun.sh` script to allow for running the application on any port specified
 - [ ] Modify the `buildThenRun.sh` script to tidy up stale images
 - [ ] Provide the WebSocket over wss (WebSocket Secure)
+- [ ] Decide whether to push Arrays of Cryptocurrencies or single Cryptocurrencies; tidy up code to reflect decision
 
 ## Sample clients
 1. I have built a sample client on iOS, [ios-crypto-websocket-client](https://github.com/georgebarker/ios-crypto-websocket-client).
