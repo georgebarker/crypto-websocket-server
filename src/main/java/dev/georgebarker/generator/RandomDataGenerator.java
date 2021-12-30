@@ -15,7 +15,7 @@ public class RandomDataGenerator {
 
     private static final int THREE_SECONDS_MS = 3000;
 
-    private static final int DEFAULT_TICK_SIZE = 6;
+    private static final int DEFAULT_TICK_SIZE = 2;
     private static final MathContext MATH_CONTEXT_FOR_TICK_SIZE =
             new MathContext(DEFAULT_TICK_SIZE, RoundingMode.HALF_UP);
 
