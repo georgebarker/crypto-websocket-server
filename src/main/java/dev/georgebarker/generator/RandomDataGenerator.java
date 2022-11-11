@@ -2,7 +2,9 @@ package dev.georgebarker.generator;
 
 import dev.georgebarker.model.Cryptocurrency;
 import dev.georgebarker.publisher.CryptocurrencyPublisher;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -10,9 +12,9 @@ import java.math.RoundingMode;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Slf4j
+@Component
+@RequiredArgsConstructor
 public class RandomDataGenerator {
-    public static final RandomDataGenerator INSTANCE = new RandomDataGenerator();
-
     private static final int THREE_SECONDS_MS = 3000;
 
     private static final int DEFAULT_TICK_SIZE = 2;
@@ -33,6 +35,8 @@ public class RandomDataGenerator {
 
     private boolean isStarted = false;
 
+    private final CryptocurrencyPublisher cryptocurrencyPublisher;
+
     public void startRandomDataGeneration() {
         isStarted = true;
         // TODO: Replace this horrible stuff with a Scheduler.
@@ -50,7 +54,7 @@ public class RandomDataGenerator {
                         .fiatTickSize(DEFAULT_TICK_SIZE)
                         .build();
 
-                CryptocurrencyPublisher.INSTANCE.publish(cryptocurrency);
+                cryptocurrencyPublisher.publish(cryptocurrency);
                 try {
                     Thread.sleep(THREE_SECONDS_MS);
                 } catch (InterruptedException e) {

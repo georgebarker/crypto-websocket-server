@@ -4,17 +4,17 @@ import dev.georgebarker.helper.LogHelper;
 import dev.georgebarker.manager.SessionManager;
 import dev.georgebarker.model.Cryptocurrency;
 import dev.georgebarker.model.CryptocurrencyList;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.util.Collections;
-import java.util.List;
 
 @Slf4j
+@Component
+@RequiredArgsConstructor
 public class CryptocurrencyPublisher {
-
-    public static final CryptocurrencyPublisher INSTANCE = new CryptocurrencyPublisher();
-    private final SessionManager sessionManager = SessionManager.INSTANCE;
-
+    private final SessionManager sessionManager;
     public void publish(Cryptocurrency cryptocurrency) {
         final CryptocurrencyList cryptocurrencyList = new CryptocurrencyList(Collections.singletonList(cryptocurrency));
         sessionManager.getSessions().forEach(session ->

@@ -8,19 +8,27 @@ import jakarta.websocket.OnError;
 import jakarta.websocket.OnOpen;
 import jakarta.websocket.Session;
 import jakarta.websocket.server.ServerEndpoint;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
-
-@ServerEndpoint(value = "/cryptocurrencies", encoders = CryptocurrencyListEncoder.class)
+@ServerEndpoint(value = "/cryptocurrencies",
+        encoders = CryptocurrencyListEncoder.class,
+        configurator = SpringWebSocketConfigurator.class
+)
+@Component
+@RequiredArgsConstructor
+@Slf4j
 public class CryptocurrenciesEndpoint {
 
-    private final SessionManager sessionManager = SessionManager.INSTANCE;
-
+    private final SessionManager sessionManager;
+    private final RandomDataGenerator randomDataGenerator;
     @OnOpen
     public void onOpen(Session session) {
         // Lazy start the generation for until we actually get a connection.
         // This will be replaced with a dependency injected generator and eventually a real data feed.
-        if (!RandomDataGenerator.INSTANCE.isStarted()) {
-            RandomDataGenerator.INSTANCE.startRandomDataGeneration();
+        if (!randomDataGenerator.isStarted()) {
+            randomDataGenerator.startRandomDataGeneration();
         }
 
         sessionManager.add(session);

@@ -4,15 +4,14 @@ package dev.georgebarker.manager;
 import dev.georgebarker.helper.LogHelper;
 import jakarta.websocket.Session;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Slf4j
+@Component
 public class SessionManager {
-
-    //TODO: Introduce Dependency Injection
-    public static final SessionManager INSTANCE = new SessionManager();
 
     /**
      * TODO List:
