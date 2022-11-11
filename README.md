@@ -12,7 +12,9 @@ A Java application running on Tomcat that pushes the prices for cryptocurrencies
 - [X] Ensure logged objects are not simply logging their HashCode
 - [X] Make the random data a bit more random
 - [X] Introduce a tick size field on the Cryptocurrency model
-- [ ] Introduce dependency injection
+- [X] Create a `run.sh` script
+- [X] Introduce dependency injection
+- [ ] Make it possible to debug the docker container
 - [ ] Use a Scheduler for random data generation
 - [ ] Unit tests
 - [ ] Decouple the Tomcat service name from the WAR name so that the WAR can be deployed with its version number, but be invoked without it
@@ -20,7 +22,6 @@ A Java application running on Tomcat that pushes the prices for cryptocurrencies
 - [ ] Find a nicer way of logging 3rd party objects than calling the LogHelper everytime, perhaps this can be achieved with a pointcut
 - [ ] Create a diagram that shows how this application works
 - [ ] Swagger API documentation, need to find out how to document a WebSocket API
-- [X] Create a `run.sh` script
 - [ ] Parameterise the `buildThenRun.sh` script to allow for running the application on any port specified
 - [ ] Modify the `buildThenRun.sh` script to tidy up stale images
 - [ ] Provide the WebSocket over wss (WebSocket Secure)

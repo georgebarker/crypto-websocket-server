@@ -1,4 +1,4 @@
-package dev.georgebarker.endpoint;
+package dev.georgebarker.config;
 
 import jakarta.websocket.server.ServerEndpointConfig;
 import lombok.extern.slf4j.Slf4j;
@@ -7,6 +7,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * I enable {@link jakarta.websocket.server.ServerEndpoint} to be able to use dependency injection.
+ */
 @Slf4j
 @Configuration
 public class SpringWebSocketConfigurator

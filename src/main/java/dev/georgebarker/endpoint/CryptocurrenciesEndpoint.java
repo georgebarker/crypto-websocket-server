@@ -1,5 +1,6 @@
 package dev.georgebarker.endpoint;
 
+import dev.georgebarker.config.SpringWebSocketConfigurator;
 import dev.georgebarker.generator.RandomDataGenerator;
 import dev.georgebarker.manager.SessionManager;
 import dev.georgebarker.model.CryptocurrencyListEncoder;

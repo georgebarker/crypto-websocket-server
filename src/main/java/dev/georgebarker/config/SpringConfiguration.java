@@ -1,3 +1,5 @@
+package dev.georgebarker.config;
+
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
@@ -17,7 +19,7 @@ public class SpringConfiguration implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        log.info("Received ServletContextEvent={}, creating SpringConfiguration...", sce);
+        log.info("Received ServletContextEvent={}, creating dev.georgebarker.config.SpringConfiguration...", sce);
 
         var applicationContext = new AnnotationConfigApplicationContext(SpringConfiguration.class);
 
@@ -27,6 +29,6 @@ public class SpringConfiguration implements ServletContextListener {
             applicationContext.getAutowireCapableBeanFactory().initializeBean(bean, beanName);
         }
 
-        log.info("SpringConfiguration created.");
+        log.info("dev.georgebarker.config.SpringConfiguration created.");
     }
 }
