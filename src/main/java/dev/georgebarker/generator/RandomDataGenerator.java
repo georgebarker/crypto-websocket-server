@@ -1,7 +1,7 @@
 package dev.georgebarker.generator;
 
 import dev.georgebarker.model.Cryptocurrency;
-import dev.georgebarker.publisher.CryptocurrencyPublisher;
+import dev.georgebarker.store.PricesStore;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -35,7 +35,7 @@ public class RandomDataGenerator {
 
     private boolean isStarted = false;
 
-    private final CryptocurrencyPublisher cryptocurrencyPublisher;
+    private final PricesStore pricesStore;
 
     public void startRandomDataGeneration() {
         isStarted = true;
@@ -54,7 +54,8 @@ public class RandomDataGenerator {
                         .fiatTickSize(DEFAULT_TICK_SIZE)
                         .build();
 
-                cryptocurrencyPublisher.publish(cryptocurrency);
+                pricesStore.update(cryptocurrency);
+
                 try {
                     Thread.sleep(THREE_SECONDS_MS);
                 } catch (InterruptedException e) {

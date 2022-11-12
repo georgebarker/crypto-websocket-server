@@ -23,12 +23,6 @@ public class SpringConfiguration implements ServletContextListener {
 
         var applicationContext = new AnnotationConfigApplicationContext(SpringConfiguration.class);
 
-        for (String beanName : applicationContext.getBeanDefinitionNames()) {
-            final Object bean = applicationContext.getBean(beanName);
-            log.info("initializeBean={} {}", bean, beanName);
-            applicationContext.getAutowireCapableBeanFactory().initializeBean(bean, beanName);
-        }
-
-        log.info("dev.georgebarker.config.SpringConfiguration created.");
+        log.info("dev.georgebarker.config.SpringConfiguration created with applicationContext={}.", applicationContext);
     }
 }
