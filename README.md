@@ -26,6 +26,7 @@ A Java application running on Tomcat that pushes the prices for cryptocurrencies
 - [ ] Modify the `buildThenRun.sh` script to tidy up stale images
 - [ ] Provide the WebSocket over wss (WebSocket Secure)
 - [ ] Decide whether to push Arrays of Cryptocurrencies or single Cryptocurrencies; tidy up code to reflect decision
+- [ ] Implement checkstyle
 
 ## Sample clients
 1. I have built a sample client on iOS, [ios-crypto-websocket-client](https://github.com/georgebarker/ios-crypto-websocket-client).

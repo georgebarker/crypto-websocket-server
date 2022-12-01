@@ -1,7 +1,6 @@
 package dev.georgebarker.endpoint;
 
 import dev.georgebarker.config.SpringWebSocketConfigurator;
-import dev.georgebarker.daemon.CryptocurrencyPricesDaemon;
 import dev.georgebarker.manager.SessionManager;
 import dev.georgebarker.model.CryptocurrencyListEncoder;
 import jakarta.websocket.OnClose;
@@ -24,8 +23,6 @@ public class CryptocurrenciesEndpoint {
 
     private final SessionManager sessionManager;
 
-    //TODO: Daemon is only present in here for the sake of triggering the dependency injection. Remove when Scheduling is introduced.
-    private final CryptocurrencyPricesDaemon cryptocurrencyPricesDaemon;
     @OnOpen
     public void onOpen(Session session) {
         sessionManager.add(session);

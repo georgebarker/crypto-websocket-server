@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * I am a @Configuration class that hooks into the end of the context initialization process of the server in order to perform dependency injection.
@@ -15,6 +16,7 @@ import org.springframework.context.annotation.Configuration;
 @WebListener
 @ComponentScan(basePackages = "dev.georgebarker")
 @Configuration
+@EnableScheduling
 public class SpringConfiguration implements ServletContextListener {
 
     @Override
