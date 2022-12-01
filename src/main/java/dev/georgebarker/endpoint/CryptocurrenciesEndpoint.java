@@ -1,7 +1,7 @@
 package dev.georgebarker.endpoint;
 
 import dev.georgebarker.config.SpringWebSocketConfigurator;
-import dev.georgebarker.generator.RandomDataGenerator;
+import dev.georgebarker.daemon.CryptocurrencyPricesDaemon;
 import dev.georgebarker.manager.SessionManager;
 import dev.georgebarker.model.CryptocurrencyListEncoder;
 import jakarta.websocket.OnClose;
@@ -23,15 +23,11 @@ import org.springframework.stereotype.Component;
 public class CryptocurrenciesEndpoint {
 
     private final SessionManager sessionManager;
-    private final RandomDataGenerator randomDataGenerator;
+
+    //TODO: Daemon is only present in here for the sake of triggering the dependency injection. Remove when Scheduling is introduced.
+    private final CryptocurrencyPricesDaemon cryptocurrencyPricesDaemon;
     @OnOpen
     public void onOpen(Session session) {
-        // Lazy start the generation for until we actually get a connection.
-        // This will be replaced with a dependency injected generator and eventually a real data feed.
-        if (!randomDataGenerator.isStarted()) {
-            randomDataGenerator.startRandomDataGeneration();
-        }
-
         sessionManager.add(session);
     }
 

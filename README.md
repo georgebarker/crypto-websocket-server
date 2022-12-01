@@ -14,8 +14,8 @@ A Java application running on Tomcat that pushes the prices for cryptocurrencies
 - [X] Introduce a tick size field on the Cryptocurrency model
 - [X] Create a `run.sh` script
 - [X] Introduce dependency injection
+- [X] Connect to Binance API
 - [ ] Make it possible to debug the docker container
-- [ ] Use a Scheduler for random data generation
 - [ ] Unit tests
 - [ ] Decouple the Tomcat service name from the WAR name so that the WAR can be deployed with its version number, but be invoked without it
 - [ ] Give the Docker container a nice hostname like `crypto-websocket-server.docker`
