@@ -2,12 +2,13 @@ package dev.georgebarker.external.resource;
 
 import dev.georgebarker.external.exception.ResourceException;
 import dev.georgebarker.external.handler.JsonBodyHandler;
+import dev.georgebarker.external.mapper.CryptocurrencyMapper;
 import dev.georgebarker.external.model.BinanceCryptocurrency;
 import dev.georgebarker.model.Cryptocurrency;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import java.math.BigDecimal;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URLEncoder;
@@ -24,8 +25,10 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Component
+@RequiredArgsConstructor
 public class PricesResource {
     private final HttpClient httpClient = HttpClient.newHttpClient();
+    private final CryptocurrencyMapper cryptocurrencyMapper;
 
     public CompletableFuture<Collection<Cryptocurrency>> fetchPrices(String... symbols) {
 
@@ -46,19 +49,8 @@ public class PricesResource {
         return httpClient.sendAsync(request, new JsonBodyHandler<>(BinanceCryptocurrency[].class))
                 .thenApply(HttpResponse::body)
                 .thenApply(Supplier::get)
-                .thenApply(this::map);
+                .thenApply(cryptocurrencyMapper::map);
     }
-
-    private Collection<Cryptocurrency> map(BinanceCryptocurrency[] binanceCryptocurrencies) {
-        return Arrays.stream(binanceCryptocurrencies).map(binanceCryptocurrency -> Cryptocurrency.builder()
-                .name(binanceCryptocurrency.getSymbol())
-                .bid(new BigDecimal(binanceCryptocurrency.getBidPrice()))
-                .ask(new BigDecimal(binanceCryptocurrency.getAskPrice()))
-                // TODO: Implement tickSize
-                .build()).collect(Collectors.toUnmodifiableSet());
-    }
-
-
     private URI buildURI(String... symbols) throws URISyntaxException {
         final String params = URLEncoder.encode(convertSymbolsToStringParam(symbols), StandardCharsets.UTF_8);
         final String uri = "https://api.binance.com/api/v3/ticker/bookTicker?symbols=" + params;
